@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 var vowelReplace = function(char) {
     vowels = ['a','e','i','o','u'];
-    if (vowels.includes(char)) {
+    if (vowels.includes(char.toLowerCase())) {
       char = '-';
     }
     return char;
