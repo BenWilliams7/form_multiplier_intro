@@ -27,20 +27,25 @@ $(document).ready(function() {
     return false;
   });
 });
+////////////////
 
-var vowelReplace = function(char) {
-    vowels = ['a','e','i','o','u'];
-    if (vowels.includes(char.toLowerCase())) {
-      char = '-';
+
+var vowelReplace = function(char, replaceThese) {
+    if (replaceThese.includes(char.toLowerCase())) {
+      char = '~';
     }
     return char;
   }
 
-  var mutateString = function(string) {
-    stringArray = string.split('');
-    newArray = [];
+  var wiggleString = function(string, replaceThese) {
+    var stringArray = string.split('');
+    var newArray = [];
     stringArray.forEach(function(char) {
-      newArray.push(vowelReplace(char));
+      newArray.push(vowelReplace(char, replaceThese));
     });
     return newArray.join('');
+  }
+
+  var replaceVowels = function(string) {
+    wiggleString(string['a','e','i','o','u']);
   }
