@@ -27,3 +27,20 @@ $(document).ready(function() {
     return false;
   });
 });
+
+var vowelReplace = function(char) {
+    vowels = ['a','e','i','o','u'];
+    if (vowels.includes(char)) {
+      char = '-';
+    }
+    return char;
+  }
+
+  var mutateString = function(string) {
+    stringArray = string.split('');
+    newArray = [];
+    stringArray.forEach(function(char) {
+      newArray.push(vowelReplace(char));
+    });
+    return newArray.join('');
+  }
